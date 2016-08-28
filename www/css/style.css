@@ -1,4 +1,17 @@
 /* Empty. Add your own CSS if you like */
 #consumoAtual{
 	color:#008AFF;
+       margin-top:50px; /* ou seja ele pega 50% da altura tela e sobe metade do valor da altura no caso 100 */
+       font-size:50px;
+       text-align:center;
+}
+
+#divCentral{
+	text-align:center;
+       margin-top:150px; /* ou seja ele pega 50% da altura tela e sobe metade do valor da altura no caso 100 */
+}
+
+#valorFatura{
+       font-size:40px;
+       text-align:center;
 }
