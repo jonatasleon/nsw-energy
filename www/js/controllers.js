@@ -27,17 +27,18 @@ function ($scope, $stateParams) {
 		baseState = $scope.state;
 	})
 
+	$scope.change = function (input) {
+		$scope.state=input.range;
+		console.log(input.range);
+		console.log($scope.state);
+			Api.sendState(baseState = $scope.state).then(function(data){});
+	};
 
-	$scope.$watch('state', function(newVal, oldVal) {
-		if (newVal > baseState + 15 || newVal < baseState - 15 || newVal === 0 || newVal === 255)
-			Api.setState(baseState = newVal).then(function(data){});
-		console.log('state is now '+newVal);
-
-	});
 
 	$scope.setLevelText = function(rangeValue) {
 		console.log('range value has changed to :'+$scope.state);
 		$scope.testvariable = $scope.state;
+
 	}
 
 }

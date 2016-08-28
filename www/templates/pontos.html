@@ -9,17 +9,18 @@
                                 <ion-item class="item-icon-left" id="cart-list-item14">
                                     <i class="icon ion-ionic"></i>Ponto 1
                                 </ion-item>
-                            </div>
-                            <div class="item range range-royal">
-                                <i class="icon ion-ios-bolt-outline"></i>
-                                <input type="range" name="corrente" min="0" max="255" value="48">
-                                <i class="icon ion-ios-bolt"></i>
-                            </div>
-                        </ion-col>
-                    </ion-row>
-                </ion-list>
-            </ion-row>
-        </ion-content>
-    </ion-row>
-</ion-grid>
+                            </ion-col>
+                            <ion-col>
+                                <div class="item range range-royal">
+                                    <i class="icon ion-ios-bolt-outline"></i>
+                                    <input type="range" name="state" ng-model="range" ng-change="change(this)" min="0" max="255" value="48">
+                                    <i class="icon ion-ios-bolt"></i>
+                                </div>
+                            </ion-col>
+                        </ion-row>
+                    </ion-list>
+                </ion-row>
+            </ion-content>
+        </ion-row>
+    </ion-grid>
 </ion-view>
