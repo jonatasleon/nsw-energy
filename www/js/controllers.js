@@ -21,7 +21,10 @@ function ($scope, $stateParams) {
 	}])
 .controller('helloCtrl',['$scope','$http',
 	function ($scope, $http) {
-		$http.get('http://200.235.93.142:3000/').success(function (data) {
+		$http.get('http://200.235.93.142:3000/api/leituras/last').
+		success(function (data) {
+			console.log(data);
 			$scope.greeting=data;
 		});
-	}])
+	}
+	])
