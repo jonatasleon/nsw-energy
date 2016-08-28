@@ -17,12 +17,12 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('menu.detalhes', {
-    url: '/detalhes',
+  .state('menu.pontos', {
+    url: '/pontos',
     views: {
       'menu': {
-        templateUrl: 'templates/detalhes.html',
-        controller: 'detalhesCtrl'
+        templateUrl: 'templates/pontos.html',
+        controller: 'pontosCtrl'
       }
     }
   })
@@ -33,6 +33,15 @@ angular.module('app.routes', [])
       'menu':{
         templateUrl: 'templates/historico.html',
         controller: 'historicoCtrl'
+      }
+    }
+  })
+  .state('menu.hello',{
+    url:"/hello",
+    views:{
+      'menu':{
+        templateUrl:'templates/hello.html',
+        controller:'helloCtrl'
       }
     }
   })

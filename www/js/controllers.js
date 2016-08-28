@@ -8,13 +8,20 @@ function ($scope, $stateParams) {
 }])
 
 .controller('homeCtrl',['$scope','$stateParams',
-function ($scope, $stateParams) {
-	$scope.consumo=00,00;
-	$scope.energia=000;
-}])
+	function ($scope, $stateParams) {
+		$scope.consumo=00,00;
+		$scope.energia=000;
+	}])
 
-.controller('detalhesCtrl',['$scope','$stateParams',
+.controller('pontosCtrl',['$scope','$stateParams',
 	function ($scope,$stateParams) {
 		$scope.ponto ="Tomada";
 		$scope.valor="";
-}])
+		$scope.ligar=false;
+	}])
+.controller('helloCtrl',['$scope','$http',
+	function ($scope, $http) {
+		$http.get('http://200.235.93.142:3000/').success(function (data) {
+			$scope.greeting=data;
+		});
+	}])
