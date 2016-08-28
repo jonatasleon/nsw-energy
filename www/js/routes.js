@@ -7,18 +7,42 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-
-
-
-      .state('historico', {
-    url: '/historico',
-    templateUrl: 'templates/historico.html',
-    controller: 'historicoCtrl'
+  .state('menu.home', {
+    url: '/localhost/home',
+    views: {
+      'menu': {
+        templateUrl: 'templates/home.html',
+        controller: 'homeCtrl'
+      }
+    }
   })
 
+  .state('menu.detalhes', {
+    url: '/detalhes',
+    views: {
+      'menu': {
+        templateUrl: 'templates/detalhes.html',
+        controller: 'detalhesCtrl'
+      }
+    }
+  })
 
-$urlRouterProvider.otherwise('/historico')
+  .state('menu.historico', {
+    url: '/historico',
+    views:{
+      'menu':{
+        templateUrl: 'templates/historico.html',
+        controller: 'historicoCtrl'
+      }
+    }
+  })
+  .state('menu', {
+    url: '/menu',
+    templateUrl: 'templates/menu.html',
+    abstract:true
+  })
 
-
+  $urlRouterProvider.otherwise('menu/localhost/home')
 
 });
+
