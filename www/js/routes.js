@@ -36,15 +36,7 @@ angular.module('app.routes', [])
       }
     }
   })
-  .state('menu.hello',{
-    url:"/hello",
-    views:{
-      'menu':{
-        templateUrl:'templates/hello.html',
-        controller:'helloCtrl'
-      }
-    }
-  })
+
   .state('menu', {
     url: '/menu',
     templateUrl: 'templates/menu.html',

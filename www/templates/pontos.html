@@ -1,16 +1,25 @@
 <ion-view title="Pontos" id="page2">
-    <ion-content padding="true" class="has-header">
-        <ion-list id="cart-list4">
-            <ion-item class="item-icon-left" id="cart-list-item14">
-                <i class="icon ion-ionic"></i>{{ponto}}</ion-item>
-            <ion-item class="item-icon-left" id="cart-list-item15">
-                <i class="icon ion-ionic"></i>Item</ion-item>
-            <ion-item class="item-icon-left" id="cart-list-item16">
-                <i class="icon ion-ionic"></i>Item</ion-item>
-            <ion-item class="item-icon-left" id="cart-list-item17">
-                <i class="icon ion-ionic"></i>Item</ion-item>
-            <ion-item class="item-icon-left" id="cart-list-item18">
-                <i class="icon ion-ionic"></i>Item</ion-item>
-        </ion-list>
-    </ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-content padding="true" class="has-header">
+                <ion-row>
+                    <ion-list id="cart-list4">
+                        <ion-row>
+                            <ion-col width-25>
+                                <ion-item class="item-icon-left" id="cart-list-item14">
+                                    <i class="icon ion-ionic"></i>Ponto 1
+                                </ion-item>
+                            </div>
+                            <div class="item range range-royal">
+                                <i class="icon ion-ios-bolt-outline"></i>
+                                <input type="range" name="corrente" min="0" max="255" value="48">
+                                <i class="icon ion-ios-bolt"></i>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-list>
+            </ion-row>
+        </ion-content>
+    </ion-row>
+</ion-grid>
 </ion-view>

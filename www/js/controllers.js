@@ -13,18 +13,33 @@ function ($scope, $stateParams) {
 		$scope.energia=000;
 	}])
 
-.controller('pontosCtrl',['$scope','$stateParams',
-	function ($scope,$stateParams) {
-		$scope.ponto ="Tomada";
-		$scope.valor="";
-		$scope.ligar=false;
-	}])
-.controller('helloCtrl',['$scope','$http',
-	function ($scope, $http) {
-		$http.get('http://200.235.93.142:3000/api/leituras/last').
-		success(function (data) {
-			console.log(data);
-			$scope.greeting=data;
-		});
+
+.controller('pontosCtrl',['$scope','Api','$stateParams','$timeout',	function ($scope, Api,$stateParams,$timeout) {
+	var baseState;
+
+	Api.getApi().then(function(result){
+		$scope.ponto = angular.fromJson(result.data);
+		console.log($scope.ponto.corrente);
+	})
+	Api.getState().then(function(data) {
+		console.log(data.data);
+		$scope.state = data.data.split("=")[1];
+		baseState = $scope.state;
+	})
+
+
+	$scope.$watch('state', function(newVal, oldVal) {
+		if (newVal > baseState + 15 || newVal < baseState - 15 || newVal === 0 || newVal === 255)
+			Api.setState(baseState = newVal).then(function(data){});
+		console.log('state is now '+newVal);
+
+	});
+
+	$scope.setLevelText = function(rangeValue) {
+		console.log('range value has changed to :'+$scope.state);
+		$scope.testvariable = $scope.state;
 	}
-	])
+
+}
+
+])
