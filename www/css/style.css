@@ -1,19 +1,19 @@
 /* Empty. Add your own CSS if you like */
 #divCentral{
 	text-align:center;
-       margin-top:150px; /* ou seja ele pega 50% da altura tela e sobe metade do valor da altura no caso 100 */
+       margin-top:75px; /* ou seja ele pega 50% da altura tela e sobe metade do valor da altura no caso 100 */
 }
 
 .valorFaturaAtual{
        font-size:20px;
        text-align:center;
-       margin-top:75px;
+       margin-top:40px;
 }
 
 .valorKWAtual{
        font-size:20px;
        text-align:center;
-       margin-top:155px;
+       margin-top:125px;
 }
 
 .valores{
