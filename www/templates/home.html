@@ -2,24 +2,22 @@
     <ion-content padding="true" class="has-header">
         <ion-icon name="heart"></ion-icon>
 
-        <div id="consumoAtual">
-            <h1>Consumo Atual</h1>
-        </div>
-
         <div id="divCentral">
-            <div id="#valorFatura">
-                <h1>Valor Fatura</h1>
+
+            <div>
+                <h4>Valor da fatura</h4>
             </div>
-            <div id="home-markdown3" style="color:#000000;font-size:40px;text-align:center;">
-                <p>R$ {{valor}}</p>
+            <div id="home-markdown3">
+                <p class="valores">R$ {{valor}}</p>
             </div>
 
             <div>
-                <h1>Consumo atual</h1>
+                <h4>Consumo atual</h4>
             </div>
-            <div>
-                <a ui-sref="menu.detalhes" id="home-button1" style="font-style:italic;color:#FED329;" class="button button-light button-large button-clear button-full icon-full ion-ios-plus-empty">{{energia}} KW/h</a>
+            <div class="valores">
+                <p> {{energia}} KW/h </p>
             </div>
+
         </div>
     </ion-content>
 </ion-view>
