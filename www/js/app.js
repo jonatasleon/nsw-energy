@@ -21,3 +21,6 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
     }
   });
 })
+.config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
+$ionicConfigProvider.tabs.position('top');
+});

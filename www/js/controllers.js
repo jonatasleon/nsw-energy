@@ -7,20 +7,23 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('homeCtrl',['$scope','$stateParams',
-	function ($scope, $stateParams) {
-		$scope.consumo=00,00;
-		$scope.energia=000;
+.controller('homeCtrl',['$scope','$stateParams','Api', '$interval',
+	function ($scope, $stateParams,Api, $interval) {
+		$interval(function() {
+			Api.getApi().then(function(result){
+			$scope.energia = angular.fromJson(result.data);
+			$scope.consumo = "em construção";//((($scope.energia.corrente/1000) * $scope.energia.tensao)*0,53122)/3600;
+		}, 1500);
+	})
+
+
 	}])
 
 
 .controller('pontosCtrl',['$scope','Api','$stateParams','$timeout',	function ($scope, Api,$stateParams,$timeout) {
 	var baseState;
 
-	Api.getApi().then(function(result){
-		$scope.ponto = angular.fromJson(result.data);
-		console.log($scope.ponto.corrente);
-	})
+
 	Api.getState().then(function(data) {
 		console.log(data.data);
 		$scope.state = data.data.split("=")[1];
